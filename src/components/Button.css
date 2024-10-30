@@ -1,3 +1,15 @@
+/* 全体の背景色を設定 */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #002a5c, #7b1fa2, #c2185b);/* 青から紫へのグラデーション */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+}
 /* ボタンスタイル */
 .button {
   padding: 10px 20px;
