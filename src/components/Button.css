@@ -10,6 +10,30 @@ body {
   color: white;
   font-family: Arial, sans-serif;
 }
+/* ボタンコンテナ全体を中央揃えにし、背景と間隔を追加 */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+/* タイトルのスタイル */
+.button-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* 各ボタンの見出しスタイル */
+.button-container p {
+  margin: 15px 0 5px;
+  font-weight: bold;
+  color: #ecf0f1;
+}
 /* ボタンスタイル */
 .button {
   padding: 10px 20px;

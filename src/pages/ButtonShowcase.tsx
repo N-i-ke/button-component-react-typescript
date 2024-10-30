@@ -1,6 +1,5 @@
-// src/pages/ButtonShowcase.tsx
 import React from "react";
-import { Button } from "../components/Button"; // 正しい相対パスを指定
+import { Button } from "../components/Button";
 
 const ButtonShowcase = () => {
   return (
@@ -12,7 +11,7 @@ const ButtonShowcase = () => {
         ＊非活性時・ローディング以外
       </p>
       <p>テキストのみ</p>
-      <Button label="テキスト" />
+      <Button label="テキスト" onClick={() => alert("クリックされました!")} />
       <p>非活性時</p>
       <Button label="非活性時" disabled />
       <p>ローディング時</p>
