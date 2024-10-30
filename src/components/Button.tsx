@@ -1,8 +1,10 @@
-import React, { FC, ButtonHTMLAttributes } from "react";
+import React, { FC, ButtonHTMLAttributes, ReactNode } from "react";
 import "./Button.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 type ButtonProps = {
-  label: string;
+  label: ReactNode;
   onClick?: () => void;
   disabled?: boolean;
   loading?: boolean;
@@ -19,7 +21,14 @@ export const Button: FC<ButtonProps> = ({
   href,
   ...props
 }) => {
-  const content = loading ? "ローディング中..." : label;
+  // loadingの場合は、アイコンとテキストを表示
+  const content = loading ? (
+    <>
+      <FontAwesomeIcon icon={faSpinner} spin /> ローディング中
+    </>
+  ) : (
+    label
+  );
 
   const handleClick = () => {
     if (href) {

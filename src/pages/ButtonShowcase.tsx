@@ -1,5 +1,11 @@
 import React from "react";
 import { Button } from "../components/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCoffee,
+  faLink,
+  faEyeSlash,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ButtonShowcase = () => {
   return (
@@ -11,13 +17,34 @@ const ButtonShowcase = () => {
         ＊非活性時・ローディング以外
       </p>
       <p>テキストのみ</p>
-      <Button label="テキスト" onClick={() => alert("クリックされました!")} />
+      <Button
+        label={
+          <>
+            <FontAwesomeIcon icon={faCoffee} /> テキスト
+          </>
+        }
+        onClick={() => alert("クリックされました!")}
+      />
       <p>非活性時</p>
-      <Button label="非活性時" disabled />
+      <Button
+        label={
+          <>
+            <FontAwesomeIcon icon={faEyeSlash} /> 非活性時
+          </>
+        }
+        disabled
+      />
       <p>ローディング時</p>
-      <Button label="ローディング時" loading />
+      <Button label loading />
       <p>リンク付き</p>
-      <Button label="リンク付き" href="https://example.com" />
+      <Button
+        label={
+          <>
+            <FontAwesomeIcon icon={faLink} /> リンク付き
+          </>
+        }
+        href="https://example.com"
+      />
     </div>
   );
 };
