@@ -19,7 +19,7 @@ export const Button: FC<ButtonProps> = ({
   href,
   ...props
 }) => {
-  const content = loading ? "Loading..." : label;
+  const content = loading ? "ローディング中..." : label;
 
   const handleClick = () => {
     if (href) {

@@ -12,13 +12,13 @@ const ButtonShowcase = () => {
         ＊非活性時・ローディング以外
       </p>
       <p>テキストのみ</p>
-      <Button label="Primary Button" />
+      <Button label="テキスト" />
       <p>非活性時</p>
-      <Button label="Secondary Button" disabled />
+      <Button label="非活性時" disabled />
       <p>ローディング時</p>
-      <Button label="Loading Button" loading />
+      <Button label="ローディング時" loading />
       <p>リンク付き</p>
-      <Button label="Link Button" href="https://example.com" />
+      <Button label="リンク付き" href="https://example.com" />
     </div>
   );
 };
