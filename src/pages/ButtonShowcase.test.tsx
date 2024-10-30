@@ -35,8 +35,12 @@ describe("ButtonShowcase", () => {
   });
 
   it("renders loading button", () => {
-    render(<Button label="ローディング中..." loading />);
-    expect(screen.getByText("ローディング中...")).toBeInTheDocument();
+    const loadingButton = screen.getByRole("button", {
+    name: /ローディング中/i,
+    });
+
+    // ボタンが存在することを確認
+    expect(loadingButton).toBeInTheDocument();
   });
 
   it("renders button with link", () => {
