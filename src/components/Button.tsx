@@ -1,9 +1,4 @@
-import React, {
-  FC,
-  ButtonHTMLAttributes,
-  ReactNode,
-  CSSProperties,
-} from "react";
+import React, { FC, ButtonHTMLAttributes, ReactNode } from "react";
 import "./Button.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
@@ -16,8 +11,9 @@ type ButtonProps = {
   type?: "button" | "submit";
   href?: string;
   target?: string;
-  style?: CSSProperties; 
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+  width?: string | number;
+  height?: string | number;
+} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, "style">; // styleの使用を制限
 
 export const Button: FC<ButtonProps> = ({
   label,
@@ -27,9 +23,11 @@ export const Button: FC<ButtonProps> = ({
   type = "button",
   href,
   target,
-  style,
+  width,
+  height,
   ...props
 }) => {
+  // loadingの場合は、アイコンとテキストを表示
   const content = loading ? (
     <>
       <FontAwesomeIcon icon={faSpinner} spin /> ローディング中
@@ -40,7 +38,7 @@ export const Button: FC<ButtonProps> = ({
 
   const handleClick = () => {
     if (href) {
-      window.open(href, target);
+      window.open(href, target); // target="_blank" の場合に別タブで開く
     } else if (onClick) {
       onClick();
     }
@@ -52,7 +50,7 @@ export const Button: FC<ButtonProps> = ({
       disabled={disabled || loading}
       type={type}
       className={`button ${disabled ? "disabled" : ""} ${loading ? "loading" : ""}`}
-      style={style} 
+      style={{ width, height }} 
       {...props}
     >
       {content}

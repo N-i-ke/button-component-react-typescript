@@ -24,7 +24,8 @@ const ButtonShowcase = () => {
           </>
         }
         onClick={() => alert("クリックされました!")}
-        style={{ width: "200px", height: "50px" }}
+        width="200px"
+        height="50px"
       />
       <p>非活性時</p>
       <Button
@@ -34,10 +35,11 @@ const ButtonShowcase = () => {
           </>
         }
         disabled
-        style={{ width: "200px", height: "50px" }}
+        width="200px"
+        height="50px"
       />
       <p>ローディング時</p>
-      <Button label loading style={{ width: "200px", height: "50px" }} />
+      <Button label loading width="200px" height="50px" />
       <p>リンク付き</p>
       <Button
         label={
@@ -47,7 +49,8 @@ const ButtonShowcase = () => {
         }
         href="https://example.com"
         target="_blank"
-        style={{ width: "200px", height: "50px" }}
+        width="200px"
+        height="50px"
       />
     </div>
   );
