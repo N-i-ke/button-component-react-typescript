@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #002a5c, #7b1fa2, #c2185b);/* 青から紫へのグラデーション */
+  background: linear-gradient(135deg, #002a5c, #7b1fa2, #c2185b); /* 青から紫へのグラデーション */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,7 +10,7 @@ body {
   color: white;
   font-family: Arial, sans-serif;
 }
-/* ボタンコンテナ全体を中央揃えにし、背景と間隔を追加 */
+
 .button-container {
   display: flex;
   flex-direction: column;
@@ -34,38 +34,56 @@ body {
   font-weight: bold;
   color: #ecf0f1;
 }
+
 /* ボタンスタイル */
 .button {
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
-  background-color: #007bff;
+  background-color: #007bff; /* 通常時の背景色 */
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s; /* トランジション追加 */
   margin-bottom: 15px; /* ボタン間の間隔 */
+  width: auto; /* 幅は親から指定 */
+  height: auto; /* 高さは親から指定 */
 }
 
+/* ホバー時 */
 .button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* ホバー時の背景色 */
 }
 
+/* フォーカス時 */
 .button:focus {
-  outline: 2px solid #0056b3;
+  outline: 2px solid #0056b3; /* フォーカス時のアウトライン */
 }
 
-.button.disabled,
+/* 非活性時 */
+.button.disabled {
+  background-color: #d3d3d3; /* 非活性時の背景色 */
+  color: #a9a9a9; /* 非活性時の文字色 */
+  cursor: not-allowed; /* 非活性時のカーソル */
+}
+
+/* ローディング時 */
 .button.loading {
-  background-color: #ccc;
-  cursor: not-allowed;
+  background-color: #ffc107; /* ローディング時の背景色 */
+  cursor: wait; /* ローディング時のカーソル */
 }
 
-/* ボタンを中央に配置するためのコンテナ */
-.button-container {
-  display: flex;
-  flex-direction: column; /* ボタンを縦に並べる */
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* 画面全体の中央に配置する */
+/* ローディング中のアイコンに関するスタイル */
+.button.loading .fa-spinner {
+  animation: spin 1s infinite; /* ローディング中のスピナーアニメーション */
+}
+
+/* アニメーション定義 */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
