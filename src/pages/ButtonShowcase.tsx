@@ -44,6 +44,7 @@ const ButtonShowcase = () => {
           </>
         }
         href="https://example.com"
+        target="_blank"
       />
     </div>
   );

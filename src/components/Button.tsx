@@ -9,7 +9,8 @@ type ButtonProps = {
   disabled?: boolean;
   loading?: boolean;
   type?: "button" | "submit";
-  href?: string; // hrefプロパティを追加
+  href?: string;
+  target?: "_blank" | "_self" | "_parent" | "_top";
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: FC<ButtonProps> = ({
@@ -19,6 +20,7 @@ export const Button: FC<ButtonProps> = ({
   loading,
   type = "button",
   href,
+  target,
   ...props
 }) => {
   // loadingの場合は、アイコンとテキストを表示
@@ -32,7 +34,7 @@ export const Button: FC<ButtonProps> = ({
 
   const handleClick = () => {
     if (href) {
-      window.location.href = href; // hrefが指定されている場合、リンク先に遷移
+      window.open(href, target)
     } else if (onClick) {
       onClick(); // onClickが指定されている場合はそれを実行
     }
