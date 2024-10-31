@@ -58,6 +58,7 @@ body {
 @media (max-width: 768px) {
   .button-container p {
     font-size: 1rem; /* タブレット用のフォントサイズ */
+    margin-bottom: 0.3rem;
   }
 }
 
