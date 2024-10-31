@@ -4,16 +4,25 @@
 
 フロントエンドのボタンコンポーネントをReact/TypeScriptで作成しました。
 
-開発言語
-React/TypeScript
-フォントアイコン
-Font Awesome
-テストライブラリ
-Jest
-フォーマット関連
-ESLint/Prettier
+## 開発言語
 
-## 確認方法
+- **React**
+- **TypeScript**
+
+## フォントアイコン
+
+- **Font Awesome**
+
+## テストライブラリ
+
+- **Jest**
+
+## フォーマット関連
+
+- **ESLint**
+- **Prettier**
+
+## セットアップ
 
 1. プロジェクトをクローンします。
 
