@@ -28,11 +28,39 @@ body {
   margin-bottom: 20px;
 }
 
+/* タブレットサイズのデバイス */
+@media (max-width: 768px) {
+  .button-container h1 {
+    font-size: 1.5rem; /* タブレット用のフォントサイズ */
+  }
+}
+
+/* スマートフォンサイズのデバイス */
+@media (max-width: 480px) {
+  .button-container h1 {
+    font-size: 1.2rem; /* スマートフォン用のフォントサイズ */
+  }
+}
+
 /* 各ボタンの見出しスタイル */
 .button-container p {
   margin: 15px 0 5px;
   font-weight: bold;
   color: #ecf0f1;
+}
+
+/* タブレットサイズのデバイス */
+@media (max-width: 768px) {
+  .button-container p {
+    font-size: 1rem; /* タブレット用のフォントサイズ */
+  }
+}
+
+/* スマートフォンサイズのデバイス */
+@media (max-width: 480px) {
+  .button-container p {
+    font-size: 0.9rem; /* スマートフォン用のフォントサイズ */
+  }
 }
 
 /* ボタンスタイル */
