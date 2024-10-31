@@ -1,4 +1,9 @@
-import React, { FC, ButtonHTMLAttributes, ReactNode } from "react";
+import React, {
+  FC,
+  ButtonHTMLAttributes,
+  ReactNode,
+  CSSProperties,
+} from "react";
 import "./Button.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
@@ -10,7 +15,8 @@ type ButtonProps = {
   loading?: boolean;
   type?: "button" | "submit";
   href?: string;
-  target?: "_blank" | "_self" | "_parent" | "_top";
+  target?: string;
+  style?: CSSProperties; 
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: FC<ButtonProps> = ({
@@ -21,9 +27,9 @@ export const Button: FC<ButtonProps> = ({
   type = "button",
   href,
   target,
+  style,
   ...props
 }) => {
-  // loadingの場合は、アイコンとテキストを表示
   const content = loading ? (
     <>
       <FontAwesomeIcon icon={faSpinner} spin /> ローディング中
@@ -34,9 +40,9 @@ export const Button: FC<ButtonProps> = ({
 
   const handleClick = () => {
     if (href) {
-      window.open(href, target)
+      window.open(href, target);
     } else if (onClick) {
-      onClick(); // onClickが指定されている場合はそれを実行
+      onClick();
     }
   };
 
@@ -46,6 +52,7 @@ export const Button: FC<ButtonProps> = ({
       disabled={disabled || loading}
       type={type}
       className={`button ${disabled ? "disabled" : ""} ${loading ? "loading" : ""}`}
+      style={style} 
       {...props}
     >
       {content}
