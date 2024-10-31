@@ -12,8 +12,8 @@ describe("ButtonShowcase", () => {
   it("renders the title", () => {
     expect(
       screen.getByText(
-        "フロントエンド・ボタンコンポーネント（React・TypeScript）"
-      )
+        "フロントエンド・ボタンコンポーネント（React・TypeScript）",
+      ),
     ).toBeInTheDocument();
   });
 
@@ -36,7 +36,7 @@ describe("ButtonShowcase", () => {
 
   it("renders loading button", () => {
     const loadingButton = screen.getByRole("button", {
-    name: /ローディング中/i,
+      name: /ローディング中/i,
     });
 
     // ボタンが存在することを確認

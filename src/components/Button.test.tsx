@@ -31,5 +31,4 @@ describe("Button component", () => {
     const buttonElement = screen.getByRole("button");
     expect(buttonElement).toBeDisabled();
   });
-
 });

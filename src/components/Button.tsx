@@ -50,7 +50,7 @@ export const Button: FC<ButtonProps> = ({
       disabled={disabled || loading}
       type={type}
       className={`button ${disabled ? "disabled" : ""} ${loading ? "loading" : ""}`}
-      style={{ width, height }} 
+      style={{ width, height }}
       {...props}
     >
       {content}
