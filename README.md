@@ -4,25 +4,29 @@
 
 フロントエンドのボタンコンポーネントをReact/TypeScriptで作成しました。
 
-## 開発言語
+### Deploy URL
+
+- https://button-component-react-typescript.vercel.app/
+
+### 開発言語
 
 - **React**
 - **TypeScript**
 
-## フォントアイコン
+### FontIcon
 
 - **Font Awesome**
 
-## テストライブラリ
+### Testing Library
 
 - **Jest**
 
-## フォーマット関連
+### Linting & Formatting
 
 - **ESLint**
 - **Prettier**
 
-## セットアップ
+### Setup
 
 1. プロジェクトをクローンします。
 
